@@ -1,0 +1,38 @@
+{% extends 'accueil.html.twig' %}
+
+{% block title %}Gestion des Categories{% endblock %}
+
+{% block body %}
+     <div class="container row">
+        <div class="container col-md-6">
+            <div class="card">
+                <div class="card-header"> Liste des Categories </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Identifiant </th>
+                                <th>Produit</th>
+                                <th>Nom Catégorie</th>
+
+                            </tr> 
+                            {% for c in categories %}
+                                <tr> 
+                                    <td>{{ c.id}} </td>
+                                    <td>{{ c.Produit}} </td>
+                                    <td>{{ c.Nom}} </td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+            </div>
+        </div>
+            <div class="container col-md-6">
+                    <div class="card ">
+                        <div class="card-header"> Formulaire de Gestion des Entrees </div>
+                            <div class="card-body"> 
+                                {{ form(form)}}
+                            </div>
+                    </div>
+            </div> 
+    </div>
+{% endblock %}
